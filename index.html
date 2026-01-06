@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻疹防治衛教宣導 - 周承良耳鼻喉科診所</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8fafc;
+        }
+        .step-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+        .alert-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-600 p-2 rounded-lg">
+                    <i class="fas fa-hospital-user text-white text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight">周承良耳鼻喉科診所</h1>
+                    <p class="text-xs text-slate-500">麻疹防疫內部實務指引</p>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full alert-pulse">
+                    <i class="fas fa-exclamation-triangle mr-1"></i> 高度警覺中
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8">
+        <!-- Alert Banner -->
+        <div class="mb-8 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg shadow-sm">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-info-circle text-red-500 mt-1"></i>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-sm font-bold text-red-800">緊急通告 (個案編號：1150111699271)</h3>
+                    <p class="text-sm text-red-700 mt-1">近期有疑似個案曾於可傳染期就醫，請全體同仁務必落實「早期發現、即時通報、嚴謹防護」。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Left Column: Core Checklist -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden sticky top-24">
+                    <div class="p-5 bg-slate-50 border-b border-slate-200">
+                        <h2 class="font-bold flex items-center">
+                            <i class="fas fa-clipboard-check text-blue-600 mr-2"></i> 快速篩檢清單
+                        </h2>
+                    </div>
+                    <div class="p-5 space-y-4">
+                        <p class="text-xs text-slate-500 mb-4">符合以下條件應立即進行 24H 法定通報：</p>
+                        
+                        <div class="space-y-3">
+                            <label class="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all cursor-pointer">
+                                <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                                <span class="text-sm">發燒 (&ge; 38&deg;C)</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all cursor-pointer">
+                                <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                                <span class="text-sm">出現紅疹 (Exanthema)</span>
+                            </label>
+                            <div class="h-px bg-slate-100 my-2"></div>
+                            <p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">符合下列任一項</p>
+                            <label class="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all cursor-pointer">
+                                <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                                <span class="text-sm">咳嗽、流鼻水、結膜炎</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all cursor-pointer">
+                                <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                                <span class="text-sm">3 週內有流行地區旅遊史</span>
+                            </label>
+                            <label class="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all cursor-pointer">
+                                <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 rounded">
+                                <span class="text-sm">無 MMR 疫苗史或不明</span>
+                            </label>
+                        </div>
+
+                        <div id="statusBox" class="mt-6 p-4 rounded-xl bg-slate-100 text-center transition-all">
+                            <p class="text-xs font-bold text-slate-500">請勾選初步症狀</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <!-- Section 2: SOP -->
+                <section>
+                    <h2 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">01</span>
+                        診所實務應變流程 (SOP)
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <h3 class="font-bold mb-2">掛號端：落實 TOCC</h3>
+                            <ul class="text-sm text-slate-600 space-y-2">
+                                <li>• 詢問近期國外或群聚點旅遊史</li>
+                                <li>• 確認是否有接觸已知疑似個案</li>
+                                <li>• 觀察病患是否有明顯皮疹</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-mask"></i>
+                            </div>
+                            <h3 class="font-bold mb-2">動線管理：立即隔離</h3>
+                            <ul class="text-sm text-slate-600 space-y-2">
+                                <li>• 立即請病患佩戴外科口罩</li>
+                                <li>• 導引至獨立通風空間候診</li>
+                                <li>• 避開孕婦、嬰幼兒動線</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 bg-slate-800 text-white p-6 rounded-2xl shadow-lg">
+                        <h3 class="font-bold mb-3 flex items-center">
+                            <i class="fas fa-broom mr-2 text-blue-400"></i> 看診後環境消毒
+                        </h3>
+                        <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                            <div class="flex items-center space-x-4">
+                                <div class="text-center px-4 py-2 border border-slate-600 rounded-lg">
+                                    <p class="text-xs text-slate-400">消毒建議</p>
+                                    <p class="font-bold">75% 酒精</p>
+                                </div>
+                                <div class="text-2xl text-slate-600">+</div>
+                                <div class="text-center px-4 py-2 border border-slate-600 rounded-lg">
+                                    <p class="text-xs text-slate-400">空間靜置</p>
+                                    <p class="font-bold text-blue-400">2 小時</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-400 max-w-xs italic text-center md:text-right">
+                                *麻疹病毒可經空氣傳播，看診後該診間應暫停使用以確保安全。
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Staff Health -->
+                <section>
+                    <h2 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">02</span>
+                        醫護人員自我保護
+                    </h2>
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-slate-50 border-b border-slate-200">
+                                <tr>
+                                    <th class="px-6 py-4 font-bold">防護項目</th>
+                                    <th class="px-6 py-4 font-bold">執行建議</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr>
+                                    <td class="px-6 py-4 font-medium">疫苗接種</td>
+                                    <td class="px-6 py-4 text-slate-600">抗體狀態不明之同仁，建議自費補接 1 劑 MMR 疫苗。</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium">自主健康監測</td>
+                                    <td class="px-6 py-4 text-slate-600">接觸疑似個案後，需監測 18-21 天。</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium">防護穿戴</td>
+                                    <td class="px-6 py-4 text-slate-600">面對疑似病患必備口罩、手套，必要時著隔離衣。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Section 4: Public Education -->
+                <section>
+                    <h2 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">03</span>
+                        民眾衛教核心重點
+                    </h2>
+                    <div class="space-y-3">
+                        <div class="flex items-start bg-blue-50 p-4 rounded-xl border border-blue-100">
+                            <i class="fas fa-syringe text-blue-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-blue-900">疫苗是最好的防護</h4>
+                                <p class="text-sm text-blue-800 opacity-80">提醒家長按時帶幼兒接種兩劑 MMR 疫苗。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                            <i class="fas fa-phone-alt text-indigo-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-indigo-900">落實預約制度</h4>
+                                <p class="text-sm text-indigo-800 opacity-80">若有症狀，請先電話告知診所，勿直接進入候診區。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-slate-100 p-4 rounded-xl border border-slate-200">
+                            <i class="fas fa-users-slash text-slate-600 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900">避開擁擠區域</h4>
+                                <p class="text-sm text-slate-700 opacity-80">流行期間減少帶未完成接種之幼兒出入公共場所。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer Disclaimer -->
+                <footer class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 space-y-4 md:space-y-0">
+                    <p>© 2026 周承良耳鼻喉科診所 內部防疫文件</p>
+                    <div class="flex space-x-6">
+                        <span class="flex items-center"><i class="fas fa-phone-alt mr-1"></i> 請洽轄區衛生局</span>
+                        <span class="flex items-center"><i class="fas fa-print mr-1 cursor-pointer"></i> 列印本指引</span>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Simple Interaction Logic
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const statusBox = document.getElementById('statusBox');
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                const checkedCount = document.querySelectorAll('input[type="checkbox"]:checked').length;
+                
+                if (checkedCount === 0) {
+                    statusBox.className = "mt-6 p-4 rounded-xl bg-slate-100 text-center transition-all";
+                    statusBox.innerHTML = '<p class="text-xs font-bold text-slate-500">請勾選初步症狀</p>';
+                } else if (checkedCount >= 3) {
+                    statusBox.className = "mt-6 p-4 rounded-xl bg-red-100 border border-red-200 text-center transition-all shadow-md";
+                    statusBox.innerHTML = '<p class="text-sm font-bold text-red-700"><i class="fas fa-exclamation-circle mr-1"></i> 高度疑似！請啟動 SOP 並立即通報</p>';
+                } else {
+                    statusBox.className = "mt-6 p-4 rounded-xl bg-blue-50 border border-blue-100 text-center transition-all";
+                    statusBox.innerHTML = '<p class="text-sm font-bold text-blue-700">密切觀察並持續評估</p>';
+                }
+            });
+        });
+
+        // Add Print functionality to buttons
+        document.querySelector('.fa-print').parentElement.addEventListener('click', () => {
+            window.print();
+        });
+    </script>
+</body>
+</html>
