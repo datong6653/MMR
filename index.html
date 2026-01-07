@@ -23,6 +23,11 @@
             70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
         }
+        @media print {
+            .no-print { display: none; }
+            body { background-color: white; }
+            .print-card { border: 1px solid #e2e8f0; box-shadow: none; }
+        }
     </style>
 </head>
 <body class="text-slate-800 antialiased">
@@ -70,34 +75,22 @@
                         <h2 class="font-bold flex items-center">
                             <i class="fas fa-clipboard-check text-blue-600 mr-2"></i> 通報條件檢查表
                         </h2>
-<div class="lg:col-span-1">
-  <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden sticky top-24">
-    <div class="p-5 bg-slate-50 border-b border-slate-200">
-      <h2 class="font-bold flex items-center">
-        <i class="fas fa-clipboard-check text-blue-600 mr-2"></i> 通報條件檢查表
-      </h2>
-    </div>
-    <div class="p-5 space-y-4">
-      <div class="bg-blue-50 p-3 rounded-lg border border-blue-100 mb-2">
-        <p class="text-[11px] font-bold leading-relaxed">
-          <!-- 先顯示「確診或疑似…」，並換成 #D0104C 顏色 -->
-          <span class="text-[#D0104C]">
-            <i class="fas fa-info-circle mr-1"></i>
-            確診或疑似個案應於 24 小時內向衛生主管機關通報。
-          </span>
-          <br>
-          <!-- 再顯示「通報定義…」，維持原本藍色字 -->
-          <span class="text-blue-800">
-            <i class="fas fa-info-circle mr-1"></i>
-            通報定義：出疹且發燒 (≥ 38°C)，並具有臨床症狀、旅遊史、疫苗接種史任一條件：
-          </span>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+                    </div>
+                    <div class="p-5 space-y-4">
+                        <div class="bg-blue-50 p-3 rounded-lg border border-blue-100 mb-2">
+                            <p class="text-[12px] font-bold leading-relaxed">
+                                <span class="text-[#D0104C]">
+                                    <i class="fas fa-bullhorn mr-1"></i>
+                                    確診或疑似個案應於 24 小時內通報。
+                                </span>
+                                <br>
+                                <span class="text-blue-800 mt-1 block">
+                                    <i class="fas fa-search-plus mr-1"></i>
+                                    通報定義：出疹且發燒 (≥ 38°C)，並具備以下任一加強條件：
+                                </span>
+                            </p>
+                        </div>
 
-                        
                         <div class="space-y-3">
                             <p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">基本必要條件</p>
                             <label class="flex items-start space-x-3 p-3 rounded-lg bg-slate-50 border border-slate-200 cursor-pointer">
@@ -111,7 +104,7 @@
                             
                             <div class="h-px bg-slate-100 my-2"></div>
                             
-                            <p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">加強判定項目 (任一)  p>
+                            <p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">加強判定項目 (任一)</p>
                             <label class="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all cursor-pointer">
                                 <input type="checkbox" class="extra-cond mt-1 h-4 w-4 text-blue-600 rounded">
                                 <span class="text-sm">臨床症狀：咳嗽、流鼻水或結膜炎</span>
@@ -122,13 +115,13 @@
                             </label>
                             <label class="flex items-start space-x-3 p-3 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-200 transition-all cursor-pointer">
                                 <input type="checkbox" class="extra-cond mt-1 h-4 w-4 text-blue-600 rounded">
-                                <span class="text-sm">疫苗接種史：無 MMR 疫苗史或不詳</span>
+                                <span class="text-sm">疫苗史：無 MMR 疫苗史或不詳</span>
                             </label>
                         </div>
 
                         <div id="statusBox" class="mt-6 transition-all">
                             <div class="p-4 rounded-xl bg-slate-100 text-center">
-                                <p class="text-xs font-bold text-slate-500">請初步評估個案症狀</p>
+                                <p class="text-xs font-bold text-slate-500">請初步勾選個案症狀</p>
                             </div>
                         </div>
                     </div>
@@ -150,7 +143,7 @@
                                 <i class="fas fa-user-shield"></i>
                             </div>
                             <h3 class="font-bold mb-2">第一線人員：落實 TOCC</h3>
-                            <p class="text-xs text-slate-400 mb-3">(含掛號櫃台、窗口等人員)</p>
+                            <p class="text-xs text-slate-400 mb-3">(掛號櫃台、窗口等)</p>
                             <ul class="text-sm text-slate-600 space-y-2">
                                 <li>• 詢問近期國外或群聚點旅遊史</li>
                                 <li>• 確認是否有接觸已知疑似個案</li>
@@ -162,7 +155,7 @@
                                 <i class="fas fa-door-closed"></i>
                             </div>
                             <h3 class="font-bold mb-2">動線管理：立即隔離</h3>
-                            <p class="text-xs text-slate-400 mb-3">(分流管理)</p>
+                            <p class="text-xs text-slate-400 mb-3">(分流與導引)</p>
                             <ul class="text-sm text-slate-600 space-y-2">
                                 <li>• 立即請病患佩戴外科口罩</li>
                                 <li>• 導引至獨立通風空間候診</li>
@@ -188,7 +181,7 @@
                                 </div>
                             </div>
                             <p class="text-xs text-slate-400 max-w-xs italic text-center md:text-right leading-relaxed">
-                                *麻疹病毒可經空氣傳播，看診後該診間應暫停使用並開窗通風。
+                                *麻疹病毒可經空氣傳播，看診後該診間應暫停使用，並開窗保持良好通風。
                             </p>
                         </div>
                     </div>
@@ -219,7 +212,7 @@
                                 </tr>
                                 <tr>
                                     <td class="px-6 py-4 font-medium">防護穿戴</td>
-                                    <td class="px-6 py-4 text-slate-600">面對疑似病患必備口罩、手套，必要時著隔離衣。</td>
+                                    <td class="px-6 py-4 text-slate-600">面對疑似病患必備外科口罩、手套，必要時著隔離衣。</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -244,7 +237,7 @@
                             <i class="fas fa-phone-alt text-indigo-600 mt-1 mr-3"></i>
                             <div>
                                 <h4 class="font-bold text-sm text-indigo-900">落實就醫告知</h4>
-                                <p class="text-sm text-indigo-800 opacity-80">若有症狀，請先電話告知醫事機構，勿直接進入候診區。</p>
+                                <p class="text-sm text-indigo-800 opacity-80">若有疑似症狀，請先電話告知醫事機構，切勿直接進入診間候診。</p>
                             </div>
                         </div>
                     </div>
@@ -255,7 +248,9 @@
                     <p>© 2026 大同區健康服務中心 版權所有</p>
                     <div class="flex space-x-6">
                         <span class="flex items-center"><i class="fas fa-phone-alt mr-1"></i> 防疫專線 02-23753782</span>
-                        <span class="flex items-center"><i class="fas fa-print mr-1 cursor-pointer"></i> 列印本指引</span>
+                        <span class="flex items-center cursor-pointer hover:text-blue-600 no-print" onclick="window.print()">
+                            <i class="fas fa-print mr-1"></i> 列印本指引
+                        </span>
                     </div>
                 </footer>
             </div>
@@ -283,7 +278,9 @@
             } else if (isFever && isRash && extraChecked > 0) {
                 statusBox.innerHTML = `
                     <div class="p-4 rounded-xl bg-red-100 border border-red-200 shadow-md">
-                        <p class="text-sm font-bold text-red-700 mb-3"><i class="fas fa-exclamation-circle mr-1"></i> 高度疑似！請啟動 SOP 並立即通報</p>
+                        <p class="text-sm font-bold text-red-700 mb-3">
+                            <i class="fas fa-exclamation-circle mr-1"></i> 高度疑似！請啟動 SOP 並立即通報
+                        </p>
                         <div class="text-left space-y-3">
                             <div class="p-2 bg-white rounded border border-red-100">
                                 <p class="text-[10px] font-bold text-red-500 uppercase">方式一：線上通報 (優先)</p>
@@ -291,17 +288,17 @@
                             </div>
                             <div class="p-2 bg-white rounded border border-red-100">
                                 <p class="text-[10px] font-bold text-red-500 uppercase">方式二：傳真通報</p>
-                                <p class="text-xs text-slate-600">報告單傳真至：<strong class="text-red-700">02-23611487</strong></p>
+                                <p class="text-xs text-slate-600">報告單傳真至：<strong class="text-red-700 underline">02-23611487</strong></p>
                                 <p class="text-[10px] text-slate-500 mt-1 italic">傳真後請致電防疫專線確認收到。</p>
                             </div>
                         </div>
                     </div>
                 `;
-            } else if ((isFever || isRash) || extraChecked > 0) {
+            } else {
                 statusBox.innerHTML = `
                     <div class="p-4 rounded-xl bg-blue-50 border border-blue-100 text-center">
                         <p class="text-sm font-bold text-blue-700">未達法定通報標準</p>
-                        <p class="text-[10px] text-blue-600 mt-1 italic">建議持續監測臨床表徵</p>
+                        <p class="text-[10px] text-blue-600 mt-1 italic">建議持續監測臨床表徵，若症狀加重請立即重評。</p>
                     </div>
                 `;
             }
@@ -310,15 +307,6 @@
         condFever.addEventListener('change', updateStatus);
         condRash.addEventListener('change', updateStatus);
         extraConds.forEach(c => c.addEventListener('change', updateStatus));
-
-        document.querySelector('.fa-print').parentElement.addEventListener('click', () => {
-            window.print();
-        });
     </script>
 </body>
 </html>
-
-
-
-
-
